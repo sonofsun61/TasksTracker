@@ -1,0 +1,119 @@
+body {
+    background: #2c2c2c;
+}
+
+.main_pic {
+    position: fixed;
+    bottom: -70px;
+    right: -90px;
+    width: 900px;
+}
+
+.logo {
+    display: block;
+    float: left;
+    width: 80px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+.logo_label {
+    display: block;
+    position: relative;
+    margin-left: 110px;
+    padding-top: 15px;
+    color: white;
+    font-size: 32px;
+    font-family: Sacramento;
+    cursor: default;
+}
+
+form {
+    position: fixed;
+    left: 250px;
+    top: 130px;
+    width: auto;
+    height: auto;
+    background: red;
+    padding: 20px;
+    border-radius: 12px;
+    border: 3px;
+    box-shadow:
+        inset 0 1px 0 #e71e1e,
+        inset 0 -5px 15px #e71e1e,
+        0 4px 6px rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+    color: white;
+}
+
+.form-group input {
+    background-color: white;
+    color: black;
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    text-indent: 10px;
+    padding-left: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    box-shadow: rgb(142, 142, 142) 0px 10px 0px 0px;
+    outline: none;
+    font-family: Lobster;
+}
+
+.form-group input::placeholder {
+    color: rgb(60, 60, 60);
+}
+
+.access-btn {
+    width: 150px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 85px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(255, 56, 86);
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.access-btn:hover {
+    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.access-btn:active {
+    background-color: rgb(255, 56, 86);
+    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}
+
+.signup_offer {
+    color: white;
+    font-size: 15px;
+    font-family: Lobster;
+    margin-top: 60px;
+    margin-left: 55px;
+    cursor: default;
+}
+
+.signup_link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.advice-container {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 867px;
+    height: 60px;
+    background: red;
+    color: white;
+    font-family: Arial, sans-serif;
+}

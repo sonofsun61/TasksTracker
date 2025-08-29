@@ -1,0 +1,136 @@
+.main__form-new-task-container {
+    display: none;
+    position: fixed;
+    left: 500px;
+    top: 75px;
+    width: 600px;
+    height: 185px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 20px;
+    font-family: Lobster;
+}
+
+.main__form-new-task-container__input-task-name {
+    display: block;
+    position: relative;
+    width: 560px;
+    margin-bottom: 10px;
+    box-shadow: inset 2px 2px 4px rgb(120, 120, 120);
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+    text-indent: 5px;
+    outline: none;
+}
+
+.main__form-new-task-container__input-task-details {
+    display: block;
+    position: relative;
+    width: 560px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    box-shadow: inset 2px 2px 4px rgb(120, 120, 120);
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+    text-indent: 5px;
+    outline: none;
+}
+
+.main__form-new-task-container__inputs-container__additional-inputs {
+    display: block;
+    position: relative;
+    width: 560px;
+    margin-bottom: 10px;
+}
+
+.main__form-new-task-container__input-task-deadline {
+    display: block;
+    float: left;
+    position: relative;
+    height: 24px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    color: gray;
+    box-shadow: inset 2px 2px 4px rgb(120, 120, 120);
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-indent: 5px;
+    outline: none;
+}
+
+.main__form-new-task-container__input-task-priority {
+    display: block;
+    height: 24px;
+    width: 110px;
+    margin-left: 100px;
+    font-size: 14px;
+    color: gray;
+    box-shadow: inset 2px 2px 4px rgb(120, 120, 120);
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-indent: 5px;
+    outline: none;
+}
+
+.main__form-new-task-container__button-add {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(47, 112, 204);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: rgb(23, 54, 97) 0px 5px 0px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.main__form-new-task-container__button-cancel {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 0;
+    background-color: rgb(232, 10, 10);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: rgb(113, 6, 6) 0px 5px 0px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.main__form-new-task-container__button-add:hover {
+    box-shadow: rgb(23, 54, 97) 0px 6.5px 0px 0px;
+}
+
+.main__form-new-task-container__button-cancel:hover {
+    box-shadow: rgb(113, 6, 6) 0px 6.5px 0px 0px;
+}
+
+.main__form-new-task-container__button-add:active {
+    background-color: rgb(47, 112, 204);
+    box-shadow: rgb(23, 54, 97) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}
+
+.main__form-new-task-container__button-cancel:active {
+    background-color: rgb(232, 10, 10);
+    box-shadow: rgb(113, 6, 6) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}

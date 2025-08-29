@@ -1,0 +1,72 @@
+body {
+    background: #2c2c2c;
+}
+
+aside {
+    float: left;
+    background: red;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 1px solid black;
+    justify-content: center;
+}
+
+aside .logo {
+    font-size: 38px;
+    position: relative;
+    top: 8px;
+    left: 15px;
+    font-family: Sacramnento;
+}
+
+aside img {
+    width: 70px;
+    float: left;
+    position: relative;
+    left: -10px;
+}
+
+aside h3 {
+    margin-top: 80px;
+    font-size: 24px;
+}
+
+.aside__rest-buttons,
+.aside__add-new-task,
+.aside__about {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    margin-top: 22px;
+    margin-left: -30px;
+    width: 100%;
+    transition: transform .5s ease;
+    background-color: rgb(255, 56, 86);
+    font-size: 14px;
+    box-shadow: rgb(201, 46, 70) 0px 4px 0px 0px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 0;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+aside a {
+    text-decoration: none;
+}
+
+aside ul li:hover,
+aside ul a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+aside hr {
+    background-color: white;
+    height: 1.5px;
+    border: none;
+}

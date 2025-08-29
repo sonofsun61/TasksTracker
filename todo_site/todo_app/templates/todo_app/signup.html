@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'todo_app/css/signup.css' %}">
+</head>
+
+<body>
+    <div class="form-container">
+        <form method="post" class="form-center">
+            {% csrf_token %}
+            <h2>Регистрация</h2>
+            <div>
+                {{ form.username }}
+                {% if form.username.errors %}
+                <div class="error-message">
+                    <p>{{form.username.errors.0}}</p>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                <div class="error-message">
+                    <p>{{form.password1.errors.0}}</p>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                <div class="error-message">
+                    <p>{{form.password2.errors.0}}</p>
+                </div>
+                {% endif %}
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+            <p class="login_offer">Уже есть аккаунт? <a class="login_link" href="{% url 'login' %}">Войти</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

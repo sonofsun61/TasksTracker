@@ -1,0 +1,196 @@
+.main__tasks-area {
+    position: fixed;
+    left: 500px;
+    top: 60px;
+    width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+}
+
+.main__tasks-area::-webkit-scrollbar {
+    width: 1px
+}
+
+.main__task-list {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: none;
+    box-shadow: rgb(100, 100, 100) 0px 12px 0px 0px;
+    font-family: Lobster;
+    line-height: 0.4;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.main__task-name {
+    padding-left: 50px;
+    padding-top: 6px;
+    cursor: default;
+}
+
+.main__task-details {
+    font-size: 14px;
+    padding-left: 50px;
+    cursor: default;
+}
+
+.main__task-created-at {
+    font-size: 12px;
+    color: rgb(60, 60, 60);
+    padding-bottom: 15px;
+    padding-left: 50px;
+    cursor: default;
+}
+
+/* Верхняя панель */
+
+.main__upper-items {
+    position: fixed;
+    left: 500px;
+    top: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.main__upper-items__container-icon-filter {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 430px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 4px rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.main__upper-items__container-icon-sort {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 4px rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding-top: 3px;
+    padding-left: 8px;
+}
+
+.main__upper-items__h1 {
+    display: block;
+    float: left;
+    font-size: 28px;
+    color: white;
+    cursor: default;
+}
+
+.main__no-tasks-label {
+    color: white;
+}
+
+/* Настройки кастомного чекбокса */
+
+.main__old-checkbox input {
+    display: none;
+}
+
+.main__old-checkbox {
+    display: flex;
+    float: left;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.main__old-checkbox__checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(120, 120, 120);
+    border: none;
+    margin-left: 14px;
+    margin-top: 1px;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 12px;
+}
+
+.main__old-checkbox:hover .main__old-checkbox__checkmark {
+    background-color: rgb(255, 56, 86);
+    border-color: rgb(255, 56, 86);
+}
+
+.main__old-checkbox input:checked+.main__old-checkbox__checkmark {
+    background-color: rgb(255, 56, 86);
+    border-color: rgb(255, 56, 86);
+}
+
+.main__old-checkbox__checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.main__old-checkbox input:checked+.main__old-checkbox__checkmark::after {
+    display: block;
+}
+
+.main__old-checkbox:hover input:not(:checked)+.main__old-checkbox__checkmark::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid rgb(40, 40, 40);
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+
+/* Настройки указания приоритета */
+
+.priority-low,
+.priority-medium,
+.priority-high {
+    display: block;
+    float: right;
+    height: 10px;
+    width: 40px;
+    margin-top: 30px;
+    margin-right: 40px;
+    border-radius: 8px;
+}
+
+.priority-low {
+    background: green;
+}
+
+.priority-medium {
+    background: yellow;
+}
+
+.priority-high {
+    background: red;
+}

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'todo_app/css/form-new-task.css' %}">
+</head>
+
+<body>
+
+    <!-- Боковая панель -->
+    <aside>
+        <img src="{% static 'todo_app/img/photo.png' %}" alt="">
+        <span class="logo">Taskly</span>
+        <h3>Навигация</h3>
+        <hr>
+        <ul>
+            <li class="aside__add-new-task" id="addTaskBtn">Добавить задачу
+            </li>
+            <a href="{% url 'home' %}">
+                <li class="aside__rest-buttons">Предстоящие задачи</li>
+            </a>
+            <a href="{% static '' %}">
+                <li class="aside__rest-buttons">Сегодня</li>
+            </a>
+            <a href="{% static '' %}">
+                <li class="aside__rest-buttons">Календарь</li>
+            </a>
+            <a href="{% static '' %}">
+                <li class="aside__rest-buttons">Выполнено</li>
+            </a>
+        </ul>
+        <hr>
+        <ul>
+            <a href="{% url 'about' %}">
+                <li class="aside__about">Про сайт</li>
+            </a>
+        </ul>
+    </aside>
+
+    <!-- Основная часть экрана -->
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+        <div class="main__form-new-task-container">
+            <form action="{% url 'home' %}" method="post">
+                {% csrf_token %}
+                <div class="main__form-new-task-container__inputs-container">
+                    <input type="text" class="main__form-new-task-container__input-task-name" name="task-name"
+                        placeholder="Новая задача" required>
+                    <input type="text" class="main__form-new-task-container__input-task-details" name="task-details"
+                        placeholder="При необходимости опишите задачу более подробно">
+                    <div class="main__form-new-task-container__inputs-container__additional-inputs">
+                        <input type="datetime-local" class="main__form-new-task-container__input-task-deadline"
+                            name="task-deadline" required>
+                        <select name="task-priority" class="main__form-new-task-container__input-task-priority"
+                            required>
+                            <option value="" disabled selected
+                                class="main__form-new-task-container__input-task-priority__desable-select">Приоритет
+                            </option>
+                            <option value="low">Низкий</option>
+                            <option value="medium">Средний</option>
+                            <option value="high">Высокий</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="main__form-new-task-container__button-add">Добавить задачу</button>
+                    <button class="main__form-new-task-container__button-cancel" type="button">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="{% static 'todo_app/js/add_new_task.js' %}"></script>
+    <script src="{% static 'todo_app/js/hide_form.js' %}"></script>
+</body>
+
+</html>
