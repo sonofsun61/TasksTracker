@@ -29,10 +29,9 @@
   ```
 2. **Создание виртуального окружения**
    ```bash
-  python -m venv venv
-  source venv/bin/activate  # Linux/Mac
-  venv\Scripts\activate     # Windows
-  ```
+   python -m venv venv
+   venv\Scripts\activate     # Windows
+    ```
 3. **Установка зависимостей**
   ```bash
   pip install -r requirements.txt
