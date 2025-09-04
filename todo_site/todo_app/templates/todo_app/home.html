@@ -18,17 +18,18 @@
     {% if tasks %}
     <div class="main__upper-items">
         <h1 class="main__upper-items__h1">Предстоящие задачи</h1>
-        <div class="main__upper-items__container-icon-filter">
-            <i class="fa-solid fa-filter fa-xl" id="main__upper-items__icon-filter"></i>
-        </div>
-        <div class="main__upper-items__container-icon-sort">
-            <i class="fa-solid fa-sort fa-xl" id="main__upper-items__icon-sort"></i>
-        </div>
+        <i class="fa-solid fa-filter fa-xl" id="main__upper-items__icon-filter"></i>
+        <i class="fa-solid fa-sort fa-xl" id="main__upper-items__icon-sort"></i>
     </div>
     <div class="main__tasks-area">
         {% for task in tasks %}
         <div class="main__task-list" data-task-id="{{task.id}}">
             <div class="priority-item {{ task.priority_class }}"></div>
+            <div class="main__task-list__edit-icon-container" id="EditIcon">
+                <div class="main__task-list__edit-icon"><i class="fa-regular fa-pen-to-square"></i></div>
+                <div class="main__task-list__edit-tip" id="EditTip">Редактировать</div>
+            </div>
+            <div class="main__task-list__edit-form" id="editForm"></div>
             <label class="main__old-checkbox">
                 <input type="checkbox" class="main__old-checkbox__checkbox" id="task-{{task.id}}"">
                 <span class=" main__old-checkbox__checkmark"></span>
@@ -50,4 +51,5 @@
     {% endif %}
 </div>
 <script src="{% static 'todo_app/js/complete_task.js' %}"></script>
+<script src="{% static 'todo_app/js/edit_task.js' %}"></script>
 {% endblock %}

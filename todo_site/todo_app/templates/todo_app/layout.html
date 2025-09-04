@@ -16,20 +16,17 @@
         <span class="logo">Taskly</span>
         <h3>Навигация</h3>
         <hr>
+        <li class="aside__add-new-task" id="addTaskBtn">Добавить задачу</li>
+        <hr>
         <ul>
-            <li class="aside__add-new-task" id="addTaskBtn">Добавить задачу
-            </li>
             <a href="{% url 'home' %}">
-                <li class="aside__rest-buttons">Предстоящие задачи</li>
+                <li class="aside__rest-buttons"><i class="fa-solid fa-book-open"></i>Предстоящие задачи</li>
             </a>
             <a href="{% static '' %}">
-                <li class="aside__rest-buttons">Сегодня</li>
+                <li class="aside__rest-buttons"><i class="fa-solid fa-calendar-days"></i>Календарь</li>
             </a>
-            <a href="{% static '' %}">
-                <li class="aside__rest-buttons">Календарь</li>
-            </a>
-            <a href="{% static '' %}">
-                <li class="aside__rest-buttons">Выполнено</li>
+            <a href="{% url 'completed_tasks' %}">
+                <li class="aside__rest-buttons"><i class="fa-solid fa-circle-check"></i>Выполнено</li>
             </a>
         </ul>
         <hr>

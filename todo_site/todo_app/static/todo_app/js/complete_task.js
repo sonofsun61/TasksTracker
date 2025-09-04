@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const checkboxes = document.querySelectorAll('.main__old-checkbox__checkbox');
 
-    // Функция для получения CSRF токена из meta тега
     function getCSRFToken() {
         return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     }
@@ -28,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         'X-CSRFToken': getCSRFToken(),
                     },
                     body: JSON.stringify({
-                        'done': true
+                        'done': true,
+                        'completion_time': new Date().toISOString()
                     })
                 })
                     .catch(error => {

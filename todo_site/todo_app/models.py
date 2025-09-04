@@ -24,6 +24,7 @@ class Tasks(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField('Дедлайн задачи')
     done = models.BooleanField('Задача выполнена', default=False)
+    completion_time = models.DateTimeField('Задача выполнена в:', null=True, blank=True)
 
     def __str__(self):
         return self.task

@@ -12,6 +12,8 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('completed_tasks/', views.completed_tasks, name='completed_tasks'),
     path('complete-task/<int:task_id>/', views.complete_task_ajax, name='complete_task_ajax'),
+    path('today/', views.today, name='today'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

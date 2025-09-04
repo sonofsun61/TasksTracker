@@ -1,3 +1,5 @@
+/* Настройки области */
+
 .main__tasks-area {
     position: fixed;
     left: 500px;
@@ -13,19 +15,7 @@
     width: 1px
 }
 
-.main__task-list {
-    position: relative;
-    width: 100%;
-    text-align: left;
-    background-color: rgb(255, 255, 255);
-    border-radius: 12px;
-    border: none;
-    box-shadow: rgb(100, 100, 100) 0px 12px 0px 0px;
-    font-family: Lobster;
-    line-height: 0.4;
-    margin-top: 20px;
-    padding-top: 10px;
-}
+/* Основные надписи */
 
 .main__task-name {
     padding-left: 50px;
@@ -47,6 +37,57 @@
     cursor: default;
 }
 
+.main__task-list {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: none;
+    box-shadow: rgb(100, 100, 100) 0px 12px 0px 0px;
+    font-family: Lobster;
+    line-height: 0.4;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.main__task-list:hover {
+    cursor: pointer;
+}
+
+/* Кнопка редактирования */
+
+.main__task-list__edit-icon-container {
+    display: none;
+    float: right;
+    margin-right: 50px;
+    margin-top: 25px;
+}
+
+.main__task-list__edit-tip {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 8px;
+    right: 85px;
+    font-size: 14px;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition-delay: 1s;
+}
+
+.main__task-list:hover .main__task-list__edit-icon-container {
+    display: block;
+}
+
+.main__task-list__edit-icon-container:hover .main__task-list__edit-tip {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Верхняя панель */
 
 .main__upper-items {
@@ -59,36 +100,15 @@
     padding-bottom: 10px;
 }
 
-.main__upper-items__container-icon-filter {
-    display: block;
-    float: left;
-    width: 30px;
-    height: 30px;
+#main__upper-items__icon-filter {
     margin-left: 430px;
-    margin-top: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
     cursor: pointer;
-    box-shadow: inset 2px 2px 4px rgb(0, 0, 0);
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    padding-top: 3px;
-    padding-left: 3px;
 }
 
-.main__upper-items__container-icon-sort {
-    display: block;
-    float: left;
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-    margin-top: 5px;
+#main__upper-items__icon-sort {
     cursor: pointer;
-    box-shadow: inset 2px 2px 4px rgb(0, 0, 0);
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    padding-top: 3px;
-    padding-left: 8px;
 }
 
 .main__upper-items__h1 {

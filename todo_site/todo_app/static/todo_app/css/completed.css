@@ -1,0 +1,67 @@
+.main__tasks-area {
+    position: relative;
+    left: 100px;
+    top: 60px;
+    width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main__tasks-area::-webkit-scrollbar {
+    width: 1px;
+}
+
+.main__p {
+    position: relative;
+    left: 100px;
+    top: 50px;
+    color: white;
+    font-size: 30px;
+}
+
+.main__tasks-area__task-container {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid white;
+    color: white;
+    font-family: Lobster;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 1px;
+}
+
+#main__tasks-area__task-container__checkmark {
+    margin-right: 10px;
+    color: rgb(51, 255, 0);
+}
+
+.main__tasks-area__task-container__task-completion-time {
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.priority-low,
+.priority-medium,
+.priority-high {
+    display: block;
+    float: right;
+    height: 10px;
+    width: 40px;
+    margin-top: 30px;
+    margin-right: 40px;
+    border-radius: 8px;
+}
+
+.priority-low {
+    background: green;
+}
+
+.priority-medium {
+    background: yellow;
+}
+
+.priority-high {
+    background: red;
+}
