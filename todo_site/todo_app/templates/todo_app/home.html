@@ -13,6 +13,14 @@
 {% endblock %}
 
 {% block content %}
+<header class="header">
+    <div class="header__profile-icon-container"><i class="fa-solid fa-user fa-xl" id="profileIcon"></i></div>
+    {% if user.is_authenticated %}
+    <p class="header__login">{{ user.username }}</p>
+    {% else %}
+    <p class="header__login">Гость</p>
+    {% endif %}
+</header>
 <noscript>Необходимо включить Javascript в вашем браузере</noscript>
 <div class="main">
     {% if tasks %}
@@ -24,17 +32,22 @@
     <div class="main__tasks-area">
         {% for task in tasks %}
         <div class="main__task-list" data-task-id="{{task.id}}">
-            <div class="priority-item {{ task.priority_class }}"></div>
-            <div class="main__task-list__edit-icon-container" id="EditIcon">
-                <div class="main__task-list__edit-icon"><i class="fa-regular fa-pen-to-square"></i></div>
-                <div class="main__task-list__edit-tip" id="EditTip">Редактировать</div>
+            <div class="main__task-list__tool-container">
+                <div class="main__task-list__edit-icon-container" id="EditIcon">
+                    <div class="main__task-list__edit-tip" id="EditTip">Редактировать</div>
+                    <div class="main__task-list__edit-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                </div>
+                <div class="main__task-list__trash-icon-container" id="trashIcon">
+                    <div class="main__task-list__trash-icon"><i class="fa-solid fa-trash-can"></i></div>
+                    <div class="main__task-list__trash-tip" id="trashTip">Удалить задачу</div>
+                </div>
             </div>
             <div class="main__task-list__edit-form" id="editForm"></div>
             <label class="main__old-checkbox">
                 <input type="checkbox" class="main__old-checkbox__checkbox" id="task-{{task.id}}"">
-                <span class=" main__old-checkbox__checkmark"></span>
+                <span class=" main__old-checkbox__checkmark-item {{task.priority_class}}"></span>
             </label>
-            <p class="main__task-name">{{task.task}}</p>
+            <p class="main__task-name-container__task-name">{{task.task}}</p>
             {% if task.details|length <= 62 %} <p class="main__task-details">{{ task.details }}</p>
                 {% else %}
                 <p class="main__task-details">{{ task.details|slice:':61'}}...</p>
@@ -46,10 +59,10 @@
     </div>
     {% else %}
     <div>
-        <p class="main__no-tasks-label">У вас нет задач</p>
+        <p class="main__no-tasks-label">У вас нет предстоящих задач</p>
     </div>
     {% endif %}
 </div>
 <script src="{% static 'todo_app/js/complete_task.js' %}"></script>
-<script src="{% static 'todo_app/js/edit_task.js' %}"></script>
+<script src="{% static 'todo_app/js/delete_task.js' %}"></script>
 {% endblock %}

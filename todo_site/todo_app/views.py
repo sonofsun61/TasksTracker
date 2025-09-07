@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from .forms import CustomUserCreationForm
 from .models import Tasks
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 
 def start_page(request):
     return render(request, 'todo_app/start_page.html')
@@ -64,6 +66,43 @@ def complete_task_ajax(request, task_id):
         task.save()
         return JsonResponse({'status': 'success', 'message': 'Task completed'})
     return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+@login_required
+def undo_task_ajax(request, task_id):
+    if request.method == 'POST':
+        try:
+            task = get_object_or_404(Tasks, id=task_id, author=request.user)
+            task.done = False
+            task.completion_time = None  # Сбрасываем время завершения
+            task.save()
+            return JsonResponse({'status': 'success', 'message': 'Задача возвращена'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+@login_required
+@csrf_exempt
+def delete_task_ajax(request, task_id):
+    if request.method == 'DELETE':
+        try:
+            task = Tasks.objects.get(id=task_id)
+            task.delete()
+            return JsonResponse({
+                'success': True,
+                'message': 'Задача успешно удалена'
+            })
+        except Tasks.DoesNotExist:
+            return JsonResponse({
+                'success': False,
+                'message': 'Задача не найдена'
+            }, status=404)
+        except Exception as e:
+            print(f"Ошибка при удалении: {e}")
+            return JsonResponse({
+                'success': False,
+                'message': 'Произошла ошибка при удалении'
+            }, status=500)
+
 
 @login_required
 def completed_tasks(request):

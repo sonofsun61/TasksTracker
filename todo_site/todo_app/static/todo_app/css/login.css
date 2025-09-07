@@ -1,5 +1,5 @@
 body {
-    background: #2c2c2c;
+    background: #343434;
 }
 
 .main_pic {
@@ -34,7 +34,7 @@ form {
     top: 130px;
     width: auto;
     height: auto;
-    background: red;
+    background: #BF3030;
     padding: 20px;
     border-radius: 12px;
     border: 3px;
@@ -73,22 +73,22 @@ form {
     margin-left: 85px;
     border-radius: 10px;
     border: 0;
-    background-color: rgb(255, 56, 86);
+    background-color: #1D7373;
     letter-spacing: 1.5px;
     font-size: 15px;
     transition: all 0.3s ease;
-    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+    box-shadow: #006363 0px 10px 0px 0px;
     color: white;
     cursor: pointer;
 }
 
 .access-btn:hover {
-    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+    box-shadow: #006363 0px 7px 0px 0px;
 }
 
 .access-btn:active {
-    background-color: rgb(255, 56, 86);
-    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    background-color: #1D7373;
+    box-shadow: #006363 0px 0px 0px 0px;
     transform: translateY(5px);
     transition: 200ms;
 }
@@ -103,8 +103,8 @@ form {
 }
 
 .signup_link {
-    text-decoration: none;
-    color: #007bff;
+    text-decoration: underline;
+    color: white;
 }
 
 .advice-container {
@@ -113,7 +113,7 @@ form {
     bottom: 0px;
     width: 867px;
     height: 60px;
-    background: red;
+    background: #BF3030;
     color: white;
     font-family: Arial, sans-serif;
 }
