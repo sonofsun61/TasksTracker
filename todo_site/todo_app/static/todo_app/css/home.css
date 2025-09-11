@@ -160,14 +160,14 @@
 }
 
 .main__upper-items__filter-select-container {
-    margin-left: 680px;
+    margin-left: 670px;
     margin-right: 5px;
     margin-top: 5px;
     cursor: pointer;
 }
 
 .main__upper-items__filter-select-container__select {
-    font-size: 12px;
+    font-size: 14px;
     border: none;
     border-radius: 5px;
     text-align: center;

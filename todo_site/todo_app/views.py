@@ -7,6 +7,7 @@ from .models import Tasks
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Case, When, IntegerField
 
 def start_page(request):
     return render(request, 'todo_app/start_page.html')
@@ -42,15 +43,34 @@ def home(request):
         priority = request.POST['task-priority']
 
         Tasks.objects.create(
-            task = task,
-            author = author,
-            details = details,
-            deadline = deadline,
-            priority = priority
+            task=task,
+            author=author,
+            details=details,
+            deadline=deadline,
+            priority=priority
         )
         return redirect('home')
 
+    # Получаем параметр сортировки из URL
+    sort_by = request.GET.get('sort', 'priority')
+    
+    # Базовый queryset
     user_tasks = Tasks.objects.filter(author=request.user, done=False)
+    
+    # Применяем сортировку
+    if sort_by == 'priority':
+        user_tasks = user_tasks.annotate(
+            priority_order=Case(
+                When(priority='high', then=1),
+                When(priority='medium', then=2),
+                When(priority='low', then=3),
+                default=4,
+                output_field=IntegerField()
+            )
+        ).order_by('priority_order', 'deadline')
+    else:  # по умолчанию по дате
+        user_tasks = user_tasks.order_by('deadline')
+    
     return render(request, 'todo_app/home.html', {'tasks': user_tasks})
 
 @login_required

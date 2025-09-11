@@ -27,10 +27,13 @@
         <h1 class="main__upper-items__h1">Предстоящие задачи</h1>
         <div class="main__upper-items__filter-select-container">
             <select class="main__upper-items__filter-select-container__select" name=""
-                id="">main__upper-items__icon-filter
-                <option value="">- Фильтр -</option>
-                <option value="">По приоритету</option>
-                <option value="">По сроку</option>
+                id="sortSelect">main__upper-items__icon-filter
+                <option class="main__upper-items__filter-select-container__select__option" value="">- Фильтр -</option>
+                <option class="main__upper-items__filter-select-container__select__option" value="priority">По
+                    приоритету
+                </option>
+                <option class="main__upper-items__filter-select-container__select__option" value="deadline">По сроку
+                </option>
             </select>
         </div>
     </div>
@@ -97,4 +100,5 @@
 <script src="{% static 'todo_app/js/delete_task.js' %}"></script>
 <script src="{% static 'todo_app/js/edit_task.js' %}"></script>
 <script src="{% static 'todo_app/js/hide_form.js' %}"></script>
+<script src="{% static 'todo_app/js/sort_task.js' %}"></script>
 {% endblock %}
