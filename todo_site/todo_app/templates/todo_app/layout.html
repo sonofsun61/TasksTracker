@@ -5,15 +5,17 @@
 <head>
     {% block head %}
     {% endblock %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'todo_app/css/layout.css' %}">
     <link rel="stylesheet" href="{% static 'todo_app/css/form-new-task.css' %}">
 </head>
 
 <body>
-
     <!-- Боковая панель -->
     <aside>
         <img src="{% static 'todo_app/img/photo.png' %}" alt="">
-        <span class="logo">Taskly</span>
+        <span class="logo">𝒯𝒜𝒮𝒦𝐿𝒴</span>
         <h3>Навигация</h3>
         <hr>
         <li class="aside__add-new-task" id="addTaskBtn">Добавить задачу</li>
@@ -30,11 +32,6 @@
             </a>
         </ul>
         <hr>
-        <ul>
-            <a href="{% url 'about' %}">
-                <li class="aside__about">Про сайт</li>
-            </a>
-        </ul>
     </aside>
 
     <!-- Основная часть экрана -->

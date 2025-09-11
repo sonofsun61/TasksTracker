@@ -5,7 +5,7 @@
     left: 500px;
     top: 60px;
     width: 800px;
-    max-height: 90vh;
+    max-height: 75vh;
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 10px;
@@ -49,6 +49,10 @@
     width: 100%;
     text-align: left;
     background-color: rgb(255, 255, 255);
+    box-shadow:
+        inset 0 1px 0 #dce8fa,
+        inset 0 -5px 15px #dce8fa,
+        0 4px 6px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     border: none;
     font-family: Lobster;
@@ -151,28 +155,30 @@
     top: 30px;
     width: 100%;
     margin-top: 10px;
-    color: white;
+    color: rgb(28, 28, 28);
     padding-bottom: 10px;
 }
 
-#main__upper-items__icon-filter {
-    margin-left: 430px;
+.main__upper-items__filter-select-container {
+    margin-left: 680px;
     margin-right: 5px;
-    margin-top: 20px;
+    margin-top: 5px;
     cursor: pointer;
 }
 
-#main__upper-items__icon-sort {
-    cursor: pointer;
+.main__upper-items__filter-select-container__select {
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .main__upper-items__h1 {
     display: block;
     float: left;
-    font-size: 28px;
-    color: black;
-    font-family: Lobster;
-    color: white;
+    font-size: 24px;
+    color: rgb(28, 28, 28);
+    font-family: 'Inter', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     cursor: default;
 }
 
@@ -181,14 +187,14 @@
     left: 500px;
     top: 30px;
     font-size: 28px;
-    color: black;
+    color: rgb(28, 28, 28);
     font-family: Lobster;
     color: white;
     cursor: default;
 }
 
 .main__no-tasks-label {
-    color: white;
+    color: rgb(28, 28, 28);
 }
 
 /* Настройки кастомного чекбокса */
@@ -312,5 +318,5 @@
     font-family: sans-serif;
     margin-top: 18px;
     margin-right: 10px;
-    color: white;
+    color: rgb(28, 28, 28);
 }

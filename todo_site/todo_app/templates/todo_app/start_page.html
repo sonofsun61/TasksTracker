@@ -1,14 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo_site</title>
+    <title>Начни работу с TASKLY</title>
+    <link rel="stylesheet" href="{% static 'todo_app/css/start_page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-
+    <div class="main">
+        <h2 class="main__topic">𝒯𝒜𝒮𝒦𝐿𝒴</h2>
+        <p class="main__description">Планируй. Делай. Достигай. Всё под контролем — шаг к спокойной продуктивности.</p>
+        <div class="main__start-work__text-container">
+            <a href="{% url 'login' %}" class="main__start-work__text-container__link">
+                <p class="main__start-work__text-container__link__text">Начать работу</p>
+            </a>
+        </div>
+    </div>
+    <div class="main__functions-container">
+        <div class="main__functions-container__function_1">
+            <div class="main__functions-container__function_1__icon"><i class="fa-solid fa-folder-open fa-xl"></i>
+            </div>
+            <p class="main__functions-container__function_1__topic">Структурируйте дела и задачи</p>
+            <p class="main__functions-container__function_1__description">Удобные списки, напоминания, расписания.
+                Планируйте работу, встречи, проекты, бытовые дела.
+                Личный цифровой органайзер под рукой — всё в одном месте.</p>
+        </div>
+        <div class="main__functions-container__function_2">
+            <div class="main__functions-container__function_2__icon"><i class="fa-solid fa-calendar-days fa-xl"></i></i>
+            </div>
+            <p class="main__functions-container__function_2__topic">Планируйте события</p>
+            <p class="main__functions-container__function_2__description">Даты, напоминания, приглашения.
+                Управляйте встречами, праздниками, поездками.
+                Никаких забытых дат — всё в порядке и вовремя.</p>
+        </div>
+        <div class="main__functions-container__function_3">
+            <div class="main__functions-container__function_3__icon"><i class="fa-solid fa-list fa-xl"></i></i>
+            </div>
+            <p class="main__functions-container__function_3__topic">Ведите учет выполненных задач</p>
+            <p class="main__functions-container__function_3__description">Фиксируйте прогресс, анализируйте
+                результаты, мотивируйте себя.
+                Видимость проделанной работы — шаг к новым целям.
+                Каждое «сделано» приближает к успеху.</p>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>

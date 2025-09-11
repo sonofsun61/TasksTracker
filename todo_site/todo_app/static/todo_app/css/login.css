@@ -1,5 +1,5 @@
 body {
-    background: #343434;
+    background: #fff;
 }
 
 .main_pic {
@@ -22,7 +22,7 @@ body {
     position: relative;
     margin-left: 110px;
     padding-top: 15px;
-    color: white;
+    color: rgb(13, 58, 116);
     font-size: 32px;
     font-family: Sacramento;
     cursor: default;
@@ -34,16 +34,14 @@ form {
     top: 130px;
     width: auto;
     height: auto;
-    background: #BF3030;
+    background: rgb(197, 209, 223);
     padding: 20px;
     border-radius: 12px;
-    border: 3px;
     box-shadow:
-        inset 0 1px 0 #e71e1e,
-        inset 0 -5px 15px #e71e1e,
+        inset 0 0 1px #adc0dc,
+        inset 0 0 5px #adc0dc,
         0 4px 6px rgba(0, 0, 0, 0.4);
     font-size: 20px;
-    color: white;
 }
 
 .form-group input {
@@ -71,40 +69,41 @@ form {
     height: 30px;
     margin-top: 30px;
     margin-left: 85px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 0;
-    background-color: #1D7373;
+    background-color: rgb(29, 84, 156);
     letter-spacing: 1.5px;
     font-size: 15px;
     transition: all 0.3s ease;
-    box-shadow: #006363 0px 10px 0px 0px;
+    box-shadow: #113974 0px 6px 0px 0px;
     color: white;
     cursor: pointer;
 }
 
 .access-btn:hover {
-    box-shadow: #006363 0px 7px 0px 0px;
+    box-shadow: #113974 0px 7px 0px 0px;
 }
 
 .access-btn:active {
-    background-color: #1D7373;
-    box-shadow: #006363 0px 0px 0px 0px;
+    background-color: rgb(29, 84, 156);
+    box-shadow: #113974 0px 0px 0px 0px;
     transform: translateY(5px);
     transition: 200ms;
 }
 
 .signup_offer {
-    color: white;
-    font-size: 15px;
-    font-family: Lobster;
+    color: rgb(24, 24, 25);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
     margin-top: 60px;
-    margin-left: 55px;
+    margin-left: 40px;
     cursor: default;
 }
 
 .signup_link {
     text-decoration: underline;
-    color: white;
+    color: rgb(24, 24, 25);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .advice-container {
@@ -113,7 +112,7 @@ form {
     bottom: 0px;
     width: 867px;
     height: 60px;
-    background: #BF3030;
+    background: rgb(29, 84, 156);
     color: white;
     font-family: Arial, sans-serif;
 }
